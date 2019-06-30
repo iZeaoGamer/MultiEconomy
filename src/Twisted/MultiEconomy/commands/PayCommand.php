@@ -40,7 +40,7 @@ class PayCommand extends PluginCommand{
 			$sender->sendMessage($api->getMessage("cannot-pay-self"));
 			return;
 		}
-		if(empty($currencies[strtolower($args[0])])){
+		if(empty($currencies[strtolower($args[1])])){
 			$sender->sendMessage($api->getMessage("currency-not-found", [
 				"{currency}" => $args[1],
 				"{currencies}" => implode(",", $api->getCurrencyNames())
